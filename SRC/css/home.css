@@ -1,0 +1,90 @@
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content {
+  text-align: center;
+  animation: slideIn 1.5s ease-out;
+}
+
+.artist-name {
+  font-size: 4rem;
+  color: #333;
+  margin-bottom: 20px;
+  animation: zoomIn 1s ease-in-out;
+}
+
+.artist-location,
+.artist-role {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeInText 2s forwards;
+}
+
+.about {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+  animation: fadeInSection 2s ease-in-out;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  animation: slideInTitle 1.5s ease-out;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInDescription 2.5s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInText {
+  to { opacity: 1; }
+}
+
+@keyframes fadeInSection {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInTitle {
+  from { transform: translateX(-100px); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeInDescription {
+  to { opacity: 1; }
+}

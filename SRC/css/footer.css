@@ -8,10 +8,17 @@
   background-color: #333;
   color: #fff;
   padding: 20px 40px;
-  position: fixed;
   width: 100%;
-  bottom: 0;
-  transition: background-color 0.3s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  transform: translateY(100%);
+  pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .footer-container {
@@ -79,4 +86,15 @@
   .footer-item {
     margin: 10px 0;
   }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(100%); }
 }
