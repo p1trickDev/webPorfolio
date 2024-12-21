@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   animation: fadeIn 2s ease-in-out;
+  padding: 20px; /* Add padding for mobile responsiveness */
 }
 
 .hero-content {
@@ -20,6 +21,19 @@
   animation: zoomIn 1s ease-in-out;
 }
 
+.artist-image {
+  border-radius: 50%;
+  width: 200px; /* Adjust the size as needed */
+  height: 200px;
+  object-fit: cover;
+}
+
+.artist-location {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the location */
+  gap: 8px; /* Space between icon and text */
+}
 .artist-location,
 .artist-role {
   font-size: 1.5rem;
@@ -29,11 +43,17 @@
   animation: fadeInText 2s forwards;
 }
 
+.location-icon {
+  width: 24px; /* Adjust the size as needed */
+  height: 24px;
+}
+
 .about {
   padding: 60px 20px;
   background-color: #fff;
   text-align: center;
   animation: fadeInSection 2s ease-in-out;
+  margin-top: 60px; /* Add margin to prevent overlap with navbar */
 }
 
 .about-content {
@@ -52,39 +72,117 @@
   font-size: 1.2rem;
   color: #666;
   line-height: 1.6;
-  opacity: 0;
+  opacity: 1;
   animation: fadeInDescription 2.5s forwards;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
 }
 
-@keyframes slideIn {
-  from { transform: translateY(-50px); }
-  to { transform: translateY(0); }
+/* Card Styles */
+/* From Uiverse.io by dylanharriscameron */
+.card {
+  position: relative;
+  width: 250px; /* Increased width */
+  height: 300px; /* Increased height */
+  border-radius: 14px;
+  z-index: 1; /* Adjusted z-index */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
 
-@keyframes zoomIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+.bg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 240px; /* Adjusted width */
+  height: 290px; /* Adjusted height */
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 2px solid white;
 }
 
-@keyframes fadeInText {
-  to { opacity: 1; }
+.blob {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  opacity: 1;
+  filter: blur(12px);
+  animation: blob-bounce 5s infinite ease;
+  transform: translate(-50%, -50%); /* Center the blob */
 }
 
-@keyframes fadeInSection {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.card-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
 }
 
-@keyframes slideInTitle {
-  from { transform: translateX(-100px); }
-  to { transform: translateX(0); }
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
 }
 
-@keyframes fadeInDescription {
-  to { opacity: 1; }
+/* Responsive Design */
+@media (max-width: 768px) {
+  .artist-name {
+    font-size: 2.5rem;
+  }
+
+  .artist-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .artist-location,
+  .artist-role {
+    font-size: 1.2rem;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

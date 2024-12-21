@@ -7,7 +7,7 @@
 /* Navbar Styling */
 .navbar {
   background-color: #333;
-  padding: 10px 20px;
+  padding: 14px 20px; /* Increased padding to make navbar taller */
   position: fixed;
   width: 100%;
   top: 0;
@@ -104,14 +104,13 @@
 /* Mobile View */
 @media (max-width: 768px) {
   .navbar-container {
-    justify-content: center; /* Center the content */
+    justify-content: center; /* Center the logo and menu */
   }
 
   .navbar-logo {
     margin: 0 auto; /* Center the logo */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static; /* Reset position */
+    transform: none; /* Reset transform */
   }
 
   .navbar-toggle {
@@ -142,13 +141,21 @@
     margin: 10px 0;
     text-align: center;
   }
+
+  .toggle-switch {
+    position: absolute;
+    right: 20px; /* Position toggle switch to the right */
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 /* From Uiverse.io by Madflows */
+/* Adjust the size of the toggle switch */
 .toggle-switch {
   position: relative;
-  width: 100px;
-  height: 50px;
+  width: 50px; /* Adjusted width */
+  height: 25px; /* Adjusted height */
   --light: #d8dbe0;
   --dark: #28292c;
   --link: rgb(27, 129, 112);
@@ -158,11 +165,11 @@
 .switch-label {
   position: absolute;
   width: 100%;
-  height: 50px;
+  height: 100%;
   background-color: var(--dark);
   border-radius: 25px;
   cursor: pointer;
-  border: 3px solid var(--dark);
+  border: 2px solid var(--dark); /* Adjusted border size */
 }
 
 .checkbox {
@@ -175,7 +182,6 @@
   width: 100%;
   height: 100%;
   border-radius: 25px;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -186,23 +192,18 @@
 .slider::before {
   content: "";
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 25px;
-  height: 25px;
+  top: 5px; /* Adjusted top position */
+  left: 5px; /* Adjusted left position */
+  width: 15px; /* Adjusted width */
+  height: 15px; /* Adjusted height */
   border-radius: 50%;
-  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
-  box-shadow: inset 12px -4px 0px 0px var(--light);
+  box-shadow: inset 8px -4px 0px 0px var(--light); /* Adjusted shadow */
   background-color: var(--dark);
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .checkbox:checked ~ .slider::before {
-  -webkit-transform: translateX(50px);
-  -ms-transform: translateX(50px);
-  transform: translateX(50px);
+  transform: translateX(25px); /* Adjusted translate value */
   background-color: var(--dark);
-  -webkit-box-shadow: none;
   box-shadow: none;
 }

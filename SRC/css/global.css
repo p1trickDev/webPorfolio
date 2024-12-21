@@ -1,0 +1,68 @@
+/* Define CSS variables for dark and light modes */
+:root {
+  --font-family: "Montserrat", sans-serif;
+
+  /* Light Mode Colors */
+  --primary-color-light: #f0f0f0;
+  --secondary-color-light: #d1d1d1;
+  --accent-color-light: #b3b3b3;
+  --font-color-light: #333;
+
+  /* Dark Mode Colors */
+  --primary-color-dark: #91819;
+  --secondary-color-dark: #4b4e49;
+  --accent-color-dark: #91805b;
+  --font-color-dark: #f8f7f2;
+}
+
+/* Apply light mode colors by default */
+body {
+  font-family: var(--font-family);
+  background-color: var(--primary-color-light);
+  color: var(--font-color-light);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: var(--primary-color-dark);
+  color: var(--font-color-dark);
+}
+
+/* Example usage of secondary and accent colors */
+.header,
+.footer {
+  background-color: var(--secondary-color-light);
+}
+
+.header.dark-mode,
+.footer.dark-mode {
+  background-color: var(--secondary-color-dark);
+}
+
+.button {
+  background-color: var(--accent-color-light);
+  color: var(--font-color-light);
+}
+
+.button.dark-mode {
+  background-color: var(--accent-color-dark);
+  color: var(--font-color-dark);
+}
+
+/* Additional global styles */
+a {
+  color: var(--accent-color-light);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color-light);
+}
+
+a.dark-mode {
+  color: var(--accent-color-dark);
+}
+
+a.dark-mode:hover {
+  color: var(--secondary-color-dark);
+}
