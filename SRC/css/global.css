@@ -1,0 +1,59 @@
+/* Define CSS variables for dark and light modes */
+:root {
+  --font-family: "Montserrat", sans-serif;
+
+  /* Light Mode Colors */
+  --primary-color: #f0f0f0;
+  --secondary-color-light: #d1d1d1;
+  --accent-color-light: #b3b3b3;
+  --font-color-light: #333;
+
+  /* Secondary Color Palette for Dark Mode */
+  --secondary-light: #6c7574; /* Contrast Ratio: 4.56:1 */
+  --secondary: #4b4e49; /* Contrast Ratio: 5.28:1 */
+  --secondary-dark: #2f3130; /* Contrast Ratio: 7.15:1 */
+
+  /* Accent Color Palette for Dark Mode */
+  --accent-light: #ffdd57; /* Contrast Ratio: 4.99:1 */
+  /* --accent: #ffe600; Contrast Ratio: 12.63:1 */
+  --accent: #b83a2d;
+  --accent-dark: #c2b200; /* Contrast Ratio: 5.21:1 */
+}
+
+body.dark-mode {
+  /* Dark Mode Colors */
+  --primary-color: #14181d;
+  --secondary-color: var(--secondary);
+  /* --tertiary-color: var(--secondary-dark); */
+  --accent-color: var(--accent);
+  /* --font-color: #d7dadc; */
+  --font-color: #dcc9a9;
+}
+
+/* Apply theme colors */
+body {
+  font-family: var(--font-family);
+  background-color: var(--primary-color);
+  color: var(--font-color);
+}
+
+/* Example usage of secondary and accent colors */
+.header,
+.footer {
+  background-color: var(--secondary-color);
+}
+
+.button {
+  background-color: var(--accent-color);
+  color: var(--font-color);
+}
+
+/* Additional global styles */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}

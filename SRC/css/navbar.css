@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: var(--primary-color);
+  padding: 14px 20px; /* Increased padding to make navbar taller */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the menu */
+  position: relative;
+}
+
+.navbar-logo {
+  color: var(--font-color);
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  margin-right: auto; /* Align logo to the left on desktop/tablet */
+}
+
+.navbar-logo:hover {
+  color: var(--accent-color);
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin: 0 15px; /* Even horizontal margins */
+}
+
+.navbar-link {
+  color: var(--font-color);
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.navbar-link:hover {
+  color: var(--accent-color);
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+.navbar-link.active {
+  color: var(--accent-color);
+}
+
+.navbar-link.active::after {
+  width: 100%;
+}
+
+.navbar-link:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--font-color);
+  font-size: 28px;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .navbar-container {
+    justify-content: center; /* Center the logo and menu */
+  }
+
+  .navbar-logo {
+    margin: 0 auto; /* Center the logo */
+    position: static; /* Reset position */
+    transform: none; /* Reset transform */
+  }
+
+  .navbar-toggle {
+    display: block;
+    position: absolute;
+    left: 20px; /* Position burger icon to the left */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    transform: none;
+    justify-content: center;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-item {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .toggle-switch {
+    position: absolute;
+    right: 20px; /* Position toggle switch to the right */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Toggle Switch Styling */
+.toggle-switch {
+  position: relative;
+  width: 50px; /* Adjusted width */
+  height: 25px; /* Adjusted height */
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 2px solid var(--secondary-color); /* Adjusted border size */
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  transition: 0.3s;
+  background-color: var(--secondary-color);
+}
+
+.checkbox:checked ~ .slider {
+  background-color: var(--accent-color);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 5px; /* Adjusted top position */
+  left: 5px; /* Adjusted left position */
+  width: 15px; /* Adjusted width */
+  height: 15px; /* Adjusted height */
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transition: transform 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  transform: translateX(25px); /* Adjusted translate value */
+  background-color: var(--primary-color);
+}

@@ -1,0 +1,137 @@
+.projects {
+  padding: 80px 20px;
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--font-color);
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Masonry Layout using Multi-Column */
+.gallery {
+  column-count: 3;
+  column-gap: 15px; /* Increased gap between columns */
+  width: 100%;
+}
+
+.gallery-item {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 15px; /* Added bottom margin for spacing */
+  border-radius: 12px; /* Rounded corners similar to Pinterest */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Responsive Columns */
+@media (max-width: 1024px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    column-count: 1;
+  }
+}
+
+/* Hover Effect */
+.gallery:hover .gallery-item:not(:hover) {
+  filter: grayscale(100%) blur(2px);
+}
+
+.gallery-item:hover {
+  filter: none;
+  transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Ensure modal is hidden by default */
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.5s;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack image and caption vertically */
+}
+
+/* Add a .show class to display the modal */
+.modal.show {
+  display: flex;
+}
+
+/* Hide the close button by default */
+.close {
+  display: none; /* Hide the close button by default */
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Show the close button when the modal is active */
+.modal.show .close {
+  display: block; /* Show the close button when modal is active */
+}
+
+.modal-content {
+  margin: 20px 0;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  animation: zoomIn 0.5s;
+}
+
+#caption {
+  margin: 10px 0;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 95%;
+    max-height: 95%;
+  }
+}
