@@ -53,16 +53,16 @@ function initializeNavbar() {
     navbarMenu.classList.toggle("active");
   });
 
-  // Theme Toggle (Dark/Light Mode)
-  themeToggle.addEventListener("change", () => {
-    if (themeToggle.checked) {
-      container.classList.add("dark");
-      container.classList.remove("light");
-    } else {
-      container.classList.add("light");
-      container.classList.remove("dark");
-    }
-  });
+  //   // Theme Toggle (Dark/Light Mode)
+  //   themeToggle.addEventListener("change", () => {
+  //     if (themeToggle.checked) {
+  //       container.classList.add("dark");
+  //       container.classList.remove("light");
+  //     } else {
+  //       container.classList.add("light");
+  //       container.classList.remove("dark");
+  //     }
+  //   });
 
   // Smooth Scroll for Navbar Links
   navbarLinks.forEach((link) => {

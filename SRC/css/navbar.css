@@ -6,7 +6,7 @@
 
 /* Navbar Styling */
 .navbar {
-  background-color: #333;
+  background-color: var(--primary-color);
   padding: 14px 20px; /* Increased padding to make navbar taller */
   position: fixed;
   width: 100%;
@@ -23,7 +23,7 @@
 }
 
 .navbar-logo {
-  color: #fff;
+  color: var(--font-color);
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
@@ -32,7 +32,7 @@
 }
 
 .navbar-logo:hover {
-  color: #ff6347;
+  color: var(--accent-color);
 }
 
 .navbar-menu {
@@ -50,7 +50,7 @@
 }
 
 .navbar-link {
-  color: #fff;
+  color: var(--font-color);
   text-decoration: none;
   font-size: 16px;
   position: relative;
@@ -62,7 +62,7 @@
   display: block;
   width: 0;
   height: 2px;
-  background: #ff6347;
+  background: var(--accent-color);
   transition: width 0.3s;
   position: absolute;
   bottom: -5px;
@@ -70,7 +70,7 @@
 }
 
 .navbar-link:hover {
-  color: #ff6347;
+  color: var(--accent-color);
 }
 
 .navbar-link:hover::after {
@@ -78,7 +78,7 @@
 }
 
 .navbar-link.active {
-  color: #ff6347;
+  color: var(--accent-color);
 }
 
 .navbar-link.active::after {
@@ -86,7 +86,7 @@
 }
 
 .navbar-link:focus {
-  outline: 2px solid #ff6347;
+  outline: 2px solid var(--accent-color);
   outline-offset: 4px;
 }
 
@@ -94,7 +94,7 @@
   display: none;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--font-color);
   font-size: 28px;
   cursor: pointer;
   position: absolute;
@@ -125,7 +125,7 @@
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: #333;
+    background-color: var(--secondary-color);
     position: absolute;
     top: 60px;
     left: 0;
@@ -150,26 +150,21 @@
   }
 }
 
-/* From Uiverse.io by Madflows */
-/* Adjust the size of the toggle switch */
+/* Toggle Switch Styling */
 .toggle-switch {
   position: relative;
   width: 50px; /* Adjusted width */
   height: 25px; /* Adjusted height */
-  --light: #d8dbe0;
-  --dark: #28292c;
-  --link: rgb(27, 129, 112);
-  --link-hover: rgb(24, 94, 82);
 }
 
 .switch-label {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: var(--dark);
+  background-color: var(--secondary-color);
   border-radius: 25px;
   cursor: pointer;
-  border: 2px solid var(--dark); /* Adjusted border size */
+  border: 2px solid var(--secondary-color); /* Adjusted border size */
 }
 
 .checkbox {
@@ -183,10 +178,11 @@
   height: 100%;
   border-radius: 25px;
   transition: 0.3s;
+  background-color: var(--secondary-color);
 }
 
 .checkbox:checked ~ .slider {
-  background-color: var(--light);
+  background-color: var(--accent-color);
 }
 
 .slider::before {
@@ -197,13 +193,11 @@
   width: 15px; /* Adjusted width */
   height: 15px; /* Adjusted height */
   border-radius: 50%;
-  box-shadow: inset 8px -4px 0px 0px var(--light); /* Adjusted shadow */
-  background-color: var(--dark);
-  transition: 0.3s;
+  background-color: var(--primary-color);
+  transition: transform 0.3s;
 }
 
 .checkbox:checked ~ .slider::before {
   transform: translateX(25px); /* Adjusted translate value */
-  background-color: var(--dark);
-  box-shadow: none;
+  background-color: var(--primary-color);
 }

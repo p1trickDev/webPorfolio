@@ -5,14 +5,14 @@
 }
 
 .footer {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--secondary-color);
+  color: var(--font-color);
   padding: 20px 40px;
   width: 100%;
   transition: opacity 0.5s ease, transform 0.5s ease;
   opacity: 0;
   transform: translateY(100%);
-  pointer-events: none; /* Prevent interaction when hidden */
+  pointer-events: none;
 }
 
 .footer.visible {
@@ -45,7 +45,7 @@
 }
 
 .footer-link {
-  color: #fff;
+  color: var(--font-color);
   text-decoration: none;
   font-size: 14px;
   position: relative;
@@ -57,7 +57,7 @@
   display: block;
   width: 0;
   height: 2px;
-  background: #ff6347;
+  background: var(--accent-color);
   transition: width 0.3s;
   position: absolute;
   bottom: -5px;
@@ -65,7 +65,7 @@
 }
 
 .footer-link:hover {
-  color: #ff6347;
+  color: var(--accent-color);
 }
 
 .footer-link:hover::after {
