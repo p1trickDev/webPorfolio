@@ -51,10 +51,9 @@
 
 /* Modal Styles */
 .modal {
-  display: none; /* Hidden by default */
+  display: none; /* Ensure modal is hidden by default */
   position: fixed;
   z-index: 1001;
-  padding-top: 60px;
   left: 0;
   top: 0;
   width: 100%;
@@ -62,27 +61,19 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8);
   animation: fadeIn 0.5s;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack image and caption vertically */
 }
 
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 80%;
-  max-height: 80%;
-  animation: zoomIn 0.5s;
+/* Add a .show class to display the modal */
+.modal.show {
+  display: flex;
 }
 
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-}
-
+/* Hide the close button by default */
 .close {
+  display: none; /* Hide the close button by default */
   position: absolute;
   top: 30px;
   right: 35px;
@@ -93,10 +84,27 @@
   cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
+/* Show the close button when the modal is active */
+.modal.show .close {
+  display: block; /* Show the close button when modal is active */
+}
+
+.modal-content {
+  margin: 20px 0;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  animation: zoomIn 0.5s;
+}
+
+#caption {
+  margin: 10px 0;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  font-size: 1.2rem;
 }
 
 /* Animations */
@@ -117,5 +125,13 @@
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 95%;
+    max-height: 95%;
   }
 }
