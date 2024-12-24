@@ -111,6 +111,7 @@ function initializeFooter() {
     console.error("Footer element not found.");
     return;
   }
+  console.log("Footer initialized.");
 
   // Function to show the footer
   function showFooter() {
@@ -127,9 +128,11 @@ function initializeFooter() {
     const scrollTop = window.scrollY || window.pageYOffset;
     const windowHeight = window.innerHeight;
     const docHeight = document.documentElement.scrollHeight;
+    console.log(
+      `ScrollTop: ${scrollTop}, WindowHeight: ${windowHeight}, DocHeight: ${docHeight}`
+    );
 
     if (scrollTop + windowHeight >= docHeight - 5) {
-      // Allow a small threshold
       showFooter();
     } else {
       hideFooter();
