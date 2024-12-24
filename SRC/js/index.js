@@ -16,13 +16,13 @@ function loadHTML(url, placeholderId) {
       }
 
       // Initialize specific functionalities based on the loaded file
-      if (url === "navbar.html") {
+      if (url === "./HTML/navbar.html") {
         initializeNavbar();
       }
-      if (url === "projects.html") {
+      if (url === "./HTML/projects.html") {
         initializeProjects();
       }
-      if (url === "footer.html") {
+      if (url === "./HTML/footer.html") {
         initializeFooter();
       }
     })
@@ -53,16 +53,31 @@ function initializeNavbar() {
     navbarMenu.classList.toggle("active");
   });
 
-  //   // Theme Toggle (Dark/Light Mode)
-  //   themeToggle.addEventListener("change", () => {
-  //     if (themeToggle.checked) {
-  //       container.classList.add("dark");
-  //       container.classList.remove("light");
-  //     } else {
-  //       container.classList.add("light");
-  //       container.classList.remove("dark");
-  //     }
-  //   });
+  // Initialize Theme
+  if (!localStorage.getItem("theme")) {
+    localStorage.setItem("theme", "dark");
+  }
+  const theme = localStorage.getItem("theme");
+
+  if (theme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.checked = true;
+  } else {
+    document.body.classList.add("light-mode");
+    themeToggle.checked = false;
+  }
+
+  themeToggle.addEventListener("click", () => {
+    if (themeToggle.checked) {
+      document.body.classList.add("dark-mode");
+      document.body.classList.remove("light-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.add("light-mode");
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    }
+  });
 
   // Smooth Scroll for Navbar Links
   navbarLinks.forEach((link) => {

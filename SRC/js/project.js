@@ -42,5 +42,5 @@ function initializeProjectModal() {
   });
 }
 
-// Export the function if using modules, or attach to window
+// Export the function to be accessible from index.js
 window.initializeProjectModal = initializeProjectModal;
