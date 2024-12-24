@@ -140,20 +140,11 @@ function initializeFooter() {
 // Asynchronous function to load all sections in the desired order
 async function loadSections() {
   try {
-    // Load Navbar
-    await loadHTML("navbar.html", "navbar-placeholder");
-
-    // Load Home Section
-    await loadHTML("home.html", "main-content");
-
-    // Load Projects Section
-    await loadHTML("projects.html", "main-content");
-
-    // Load Contact Section
-    await loadHTML("contact.html", "main-content");
-
-    // Load Footer
-    await loadHTML("footer.html", "footer-placeholder");
+    await loadHTML("./HTML/navbar.html", "navbar-placeholder");
+    await loadHTML("./HTML/home.html", "main-content");
+    await loadHTML("./HTML/projects.html", "main-content");
+    await loadHTML("./HTML/contact.html", "main-content");
+    await loadHTML("./HTML/footer.html", "footer-placeholder");
   } catch (error) {
     console.error("Error loading sections:", error);
   }

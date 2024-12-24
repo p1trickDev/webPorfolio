@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-  initializeProjectModal();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   initializeProjectModal();
+// });
 
 function initializeProjectModal() {
   const galleryItems = document.querySelectorAll(".gallery-item");

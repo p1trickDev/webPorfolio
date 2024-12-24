@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const theme = localStorage.getItem("theme");
   const themeToggle = document.getElementById("theme-toggle");
-  
+
   if (theme === "dark") {
     document.body.classList.add("dark-mode");
     themeToggle.checked = true;
@@ -15,18 +15,21 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("light-mode");
     themeToggle.checked = false;
   }
-});
 
-// Theme Toggle (Dark/Light Mode)
-document.getElementById("theme-toggle").addEventListener("change", () => {
-  if (document.getElementById("theme-toggle").checked) {
-    document.body.classList.add("dark-mode");
-    document.body.classList.remove("light-mode");
-    localStorage.setItem("theme", "dark");
-  } else {
-    document.body.classList.add("light-mode");
-    document.body.classList.remove("dark-mode");
-    localStorage.setItem("theme", "light");
+  // Wrap your DOM-dependent code in an event listener:
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      // Theme Toggle (Dark/Light Mode)
+      if (themeToggle.checked) {
+        document.body.classList.add("dark-mode");
+        document.body.classList.remove("light-mode");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.body.classList.add("light-mode");
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("theme", "light");
+      }
+    });
   }
 });
 
