@@ -116,7 +116,7 @@
   .navbar-toggle {
     display: block;
     position: absolute;
-    left: 20px; /* Position burger icon to the left */
+    left: 7px; /* Position burger icon to the left */
     top: 50%;
     transform: translateY(-50%);
   }
