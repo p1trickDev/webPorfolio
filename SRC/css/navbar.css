@@ -18,17 +18,18 @@
 .navbar-container {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the menu */
+  justify-content: space-between; /* Adjusted to space between logo and menu */
   position: relative;
 }
 
 .navbar-logo {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
   color: var(--font-color);
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
   transition: color 0.3s ease;
-  margin-right: auto; /* Align logo to the left on desktop/tablet */
 }
 
 .navbar-logo:hover {
@@ -38,9 +39,6 @@
 .navbar-menu {
   list-style: none;
   display: flex;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   margin: 0;
   padding: 0;
 }
@@ -101,10 +99,16 @@
   left: 20px;
 }
 
+.brand-icon {
+  width: 30px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 1px; /* Add some space between the icon and the text */
+}
+
 /* Mobile View */
 @media (max-width: 768px) {
   .navbar-container {
-    justify-content: center; /* Center the logo and menu */
+    justify-content: space-between; /* Adjusted to space between logo and menu */
   }
 
   .navbar-logo {
@@ -127,7 +131,7 @@
     width: 100%;
     background-color: var(--secondary-color);
     position: absolute;
-    top: 60px;
+    top: 44px;
     left: 0;
     transform: none;
     justify-content: center;

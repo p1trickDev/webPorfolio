@@ -16,7 +16,7 @@
 }
 
 .artist-name {
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--font-color);
   margin-bottom: 20px;
   animation: zoomIn 1s ease-in-out;
@@ -98,8 +98,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Align items to the top */
   box-shadow: 20px 20px 60px #4b4e49, -20px -20px 60px #6c7574;
+  padding: 20px; /* Add padding for spacing */
 }
 
 .bg {
@@ -136,8 +137,22 @@
 .card-content {
   position: relative;
   z-index: 3;
-  text-align: center;
+  text-align: left; /* Align text to the left */
+  width: 100%; /* Ensure content takes full width */
 }
+
+.card-content h3 {
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 10px; /* Add bottom margin for spacing */
+  text-align: center; /* Center the header */
+}
+
+.card-content ul {
+  padding-left: 20px; /* Add padding for bullet points */
+  list-style: disc; /* Use disc for bullet points */
+  font-size: 0.9rem; /* Make the list items smaller */
+}
+
 .about-content {
   font-size: 1.2rem;
   color: var(--font-color);
@@ -146,6 +161,7 @@
   opacity: 1;
   animation: fadeInDescription 2.5s forwards;
 }
+
 @keyframes blob-bounce {
   0% {
     transform: translate(-100%, -100%) translate3d(0, 0, 0);
@@ -163,28 +179,6 @@
     transform: translate(-100%, -100%) translate3d(0, 0, 0);
   }
 }
-
-/* @keyframes blob-bounce {
-  0% {
-    transform: translate(-50%, -50%) translate3d(0, 0, 0);
-  }
-
-  25% {
-    transform: translate(-50%, -50%) translate3d(100%, 0, 0);
-  }
-
-  50% {
-    transform: translate(-50%, -50%) translate3d(100%, 100%, 0);
-  }
-
-  75% {
-    transform: translate(-50%, -50%) translate3d(0, 100%, 0);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) translate3d(0, 0, 0);
-  }
-} */
 
 /* Responsive Design */
 @media (max-width: 768px) {

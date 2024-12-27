@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+}
+
 .footer {
   background-color: var(--secondary-color);
   color: var(--font-color);
@@ -13,6 +27,8 @@
   opacity: 0;
   transform: translateY(100%);
   pointer-events: none;
+  position: relative;
+  bottom: 0;
 }
 
 .footer.visible {
