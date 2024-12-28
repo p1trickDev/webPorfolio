@@ -27,12 +27,15 @@ body.dark-mode {
   /* --tertiary-color: var(--secondary-dark); */
   --accent-color: var(--accent);
   /* --font-color: #d7dadc; */
-  --font-color: #dcc9a9;
+  --font-color: #f5e7ce;
 }
 
 body.light-mode {
-  --primary-color: #f5f5f5; /* Light background */
-  --font-color: #181818; /* Same font color as dark mode */
+  --font-color: #ab8e74; /* Base color */
+}
+.light-mode .navbar,
+.light-mode .footer {
+  background-color: #e0e0e0; /* Darker shade for navbar/footer */
 }
 
 /* Apply theme colors */

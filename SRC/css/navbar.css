@@ -161,6 +161,11 @@
   height: 25px; /* Adjusted height */
 }
 
+.light-mode .toggle-switch .slider {
+  background-color: #ccc; /* Neutral slider color for light mode */
+  border: 2px solid #ccc;
+}
+
 .switch-label {
   position: absolute;
   width: 100%;
@@ -183,17 +188,22 @@
   border-radius: 25px;
   transition: 0.3s;
   background-color: var(--secondary-color);
+  top: 0; /* Ensure the slider is positioned at the top */
+  left: 0;
+  right: 2px;
 }
 
 .checkbox:checked ~ .slider {
   background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
 }
 
 .slider::before {
   content: "";
   position: absolute;
-  top: 5px; /* Adjusted top position */
-  left: 5px; /* Adjusted left position */
+  top: 1px; /* Adjusted top position */
+  left: 1px; /* Adjusted left position */
+  right: 3px; /* Adjusted right position */
   width: 15px; /* Adjusted width */
   height: 15px; /* Adjusted height */
   border-radius: 50%;
